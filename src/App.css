@@ -1,38 +1,267 @@
-.App {
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block; }
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button { cursor: pointer; }
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+/* ----------------------------------------------------- */
+
+/* navbar starts  */
+nav {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(100, 185, 255);
+}
+
+nav ul {
+  flex-basis: 20%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav ul li {
+  padding: 15px 10px;
+  transition: .3s ease;
+}
+
+nav ul li:hover {
+  background-color: rgb(24, 132, 233, .6);
+}
+
+nav a {
+  color: #fff;
+}
+/* navbar ends  */
+
+/* login starts  */
+.login {
+  width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid rgb(241, 241, 241);
+  background-color: rgba(241, 241, 241, 0.6);
+}
+
+.login h2 {
+  margin-bottom: 20px;
+  color: rgb(77, 77, 77);
+  font-size: 25px;
+  text-transform: uppercase;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login form > div {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login form input {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login button {
+  width: 100%;
+  margin: 20px 0 5px 0;
+}
+
+.login button + span {
+  font-size: 12px;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+}
+
+/* login ends  */
+
+/* signup starts  */
+/* signup ends  */
+
+/* profile section starts */
+.profile {
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-container {
+  width: 400px;
+  padding: 10px;
+  border: 2px solid rgb(241, 241, 241);
+  background-color: rgba(241, 241, 241, 0.6);
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-pic-container {
+  margin-bottom: 30px;
+  text-align: center;
 }
+
+.profile-pic-container img {
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.user-details {
+  margin-bottom: 20px;
+}
+
+.user-details div {
+  margin-bottom: 5px;
+}
+
+.user-details div span:first-child {
+  margin-right: 5px;
+  font: bold 15px "Cantarell";
+}
+
+.logout-btn {
+  width: 100%;
+}
+
+/* profile section ends  */
+
+/* edit-user-details starts */
+.open-btn,
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.edit-user-details {
+  width: 400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 2px solid rgb(241, 241, 241);
+  background-color: rgba(241, 241, 241);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.edit-user-details h2 {
+  margin-bottom: 20px;
+  color: rgb(77, 77, 77);
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.edit-user-details form > div {
+  margin-bottom: 20px;
+}
+
+.edit-user-details form input,
+.edit-user-details form textarea{
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+}
+
+.edit-user-details button {
+  width: 100%;
+  margin: 20px 0 5px 0;
+}
+
+/* edit-user-details ends  */
